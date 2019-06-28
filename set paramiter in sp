@@ -1,0 +1,61 @@
+--set paramiter in sp
+
+
+CREATE PROCEDURE USP_Updatestoreprocedure
+	@paramiterno1 as varchar(50)
+	,@paramiterno2 as varchar(50)
+	,@paramiterno3 as varchar(10)
+AS
+BEGIN
+        --UPDATE  Applicant_Mast
+		Update Applicant_Mast Set Tian_No=@paramiterno1 ,
+		                           PHM_Br_Code=@paramiterno3 ,
+								   Swap_Flag='Yes' 
+		                           where Tian_No=@paramiterno2
+
+		--UPDATE  TEST_TRANS
+		Update TEST_TRANS 
+		Set Tian_No=@paramiterno1 
+		where Tian_No=@paramiterno2
+
+		--UPDATE  APPOINTMENT_MASTER
+		Update APPOINTMENT_MASTER 
+		Set Tian_No=@paramiterno1 
+		where Tian_No=@paramiterno2
+
+		--Update APPOINTMENT_TRANS
+		Update APPOINTMENT_TRANS 
+		Set Tian_No= @paramiterno1 
+		where Tian_No=@paramiterno2
+
+		--Update Life_History
+		Update Life_History 
+		Set Tain_no= @paramiterno1 
+		where Tain_no=@paramiterno2
+
+		--Update applicant_mast_additional
+		Update applicant_mast_additional 
+		Set Tian_No=@paramiterno1 
+		where Tian_No=@paramiterno2
+
+		--Update pims_scanupload
+		Update pims_scanupload 
+		Set Tian_No=@paramiterno1 
+		where Tian_No=@paramiterno2
+
+		--Update QCChecklistDetails
+		Update QCChecklistDetails  
+		Set TianNo=@paramiterno1 
+		where TianNo=@paramiterno2
+
+		--Update Mobile_Applicant_mast
+		Update Mobile_Applicant_mast  
+		Set Tian_No=@paramiterno1 
+		where Tian_No=@paramiterno2
+
+		--Update pims_scan_image
+		Update pims_scan_image  Set Tian_No=@paramiterno1
+		 where Tian_No=@paramiterno2
+
+
+END
